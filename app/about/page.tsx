@@ -9,7 +9,7 @@ const AboutPage = () => {
         <Container>
 
           <div className="grid grid-cols-12 gap-10">
-            <div className="flex flex-col gap-6 col-span-3">
+            <div className="flex flex-col gap-6 col-span-4">
               <Title className="font-redHat md:text-5xl text-3xl md:leading-tight leading-normal ">
                 About
               </Title>
