@@ -1,10 +1,10 @@
-import Container from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 import React from "react";
 
 const BlogPage = () => {
   return (
     <main className="grow">
-      <Container>BlogPage</Container>
+      <PageHeader title="Blog" />
     </main>
   );
 };
