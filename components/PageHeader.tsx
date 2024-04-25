@@ -15,7 +15,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title, subtitle, children }) =>
         <section className="md:py-10 py-5">
             <Container>
                 <div className="grid grid-cols-12 gap-10">
-                    <div className={` ${hasChildren ? 'col-span-5' : 'col-span-6'} flex flex-col gap-6 `}>
+                    <div className={` ${hasChildren ? 'col-span-5' : 'col-span-7'} flex flex-col gap-6 `}>
                         <Title className="md:text-5xl text-3xl md:leading-tight" subtitle={subtitle}>
                             {title}
                         </Title>

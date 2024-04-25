@@ -13,19 +13,19 @@ const WorksPage = () => {
         title="Project Title"
         description="Description of the project goes here."
         year="2022"
-        imageUrl="https://placehold.co/600x400/png"
+        imageUrl="https://placehold.co/544x544/png"
       />
       <PortfolioItem
         title="Project Title"
         description="Description of the project goes here."
         year="2022"
-        imageUrl="https://placehold.co/600x400/png"
+        imageUrl="https://placehold.co/544x544/png"
       />
       <PortfolioItem
         title="Project Title"
         description="Description of the project goes here."
         year="2022"
-        imageUrl="https://placehold.co/600x400/png"
+        imageUrl="https://placehold.co/544x544/png"
       />
     </main>
   );

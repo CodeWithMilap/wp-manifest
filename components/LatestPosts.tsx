@@ -18,7 +18,7 @@ export const LatestPosts = () => {
           </div>
         </div>
 
-        <div className="flex gap-8 md:flex-row flex-col">
+        <div className="grid md:grid-cols-3 gap-8">
           <BlogCard
             imageUrl="https://placehold.co/350x250/png"
             category="Interface Design"

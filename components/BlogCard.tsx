@@ -20,20 +20,22 @@ const BlogCard: React.FC<CardProps> = ({
 }) => {
   return (
     <div className="max-w-sm flex flex-col gap-6 mb-10">
-      <Image
-        src={imageUrl}
-        width={350}
-        height={250}
-        className="w-full"
-        alt={title} // Using title as alt
-      />
-      <div className="leading-normal tracking-wide flex flex-col gap-6">
-        <div className="flex justify-between text-xs text-gray-500">
+      <Link href={'#'} className="relative overflow-hidden group block">
+        <Image
+          src={imageUrl}
+          width={350}
+          height={250}
+          className="w-full scale-110 transition-all duration-300 group-hover:scale-100"
+          alt={title} // Using title as alt
+        />
+      </Link>
+      <div className="leading-normal tracking-wide flex flex-col gap-4">
+        <div className="flex justify-between text-xs text-Grey-500">
           <div>{category}</div>
           <div>{date}</div>
         </div>
         <Title><Link href={'/blog'}>{title}</Link></Title>
-        <p>{description}</p>
+        <p className="text-Grey-700">{description}</p>
       </div>
     </div>
   );
