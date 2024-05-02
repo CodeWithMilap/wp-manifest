@@ -1,7 +1,7 @@
-import Logo from "../Logo";
-import MenuButton from "./MenuButton"; // Import the MenuButton component
-import MenuItem from "./MenuItem"; // Import the MenuItem component
-import menuItems from "@/constants/menuItems"; // Import the menu items from a constants file
+import Logo from '../Logo';
+import MenuButton from './MenuButton'; // Import the MenuButton component
+import MenuItem from './MenuItem'; // Import the MenuItem component
+import menuItems from '@/constants/menuItems'; // Import the menu items from a constants file
 
 // Define the expected properties for the MobileMenu component
 interface MobileMenuProps {
@@ -19,17 +19,17 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   isMenuOpen,
 }) => {
   return (
-    <div className="lg:hidden" role="dialog" aria-modal="true">
+    <div className='lg:hidden' role='dialog' aria-modal='true'>
       {/* <!-- Background backdrop, show/hide based on slide-over state. --> */}
-      <div className="fixed inset-0 z-10"></div>
-      <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto  px-6 py-6  sm:ring-1 sm:ring-Grey-900/10 bg-white">
-        <div className="flex items-center justify-between">
+      <div className='fixed inset-0 z-10'></div>
+      <div className='fixed inset-y-0 right-0 z-50 w-full overflow-y-auto  bg-white px-6  py-6 sm:ring-1 sm:ring-Grey-900/10'>
+        <div className='flex items-center justify-between'>
           <Logo /> {/* Render the Logo component */}
-          <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{" "}
+          <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
           {/* Render the MenuButton component with the toggleMenu function */}
         </div>
-        <div className="mt-6 py-6 flow-root">
-          <div className="-my-6 divide-y divide-Gray-500/10">
+        <div className='mt-6 flow-root py-6'>
+          <div className='divide-Gray-500/10 -my-6 divide-y'>
             {menuItems.map((menuItem, index) => (
               <MenuItem
                 key={index}

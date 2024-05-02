@@ -1,12 +1,16 @@
-import PageHeader from "@/components/PageHeader";
-import React from "react";
+import PageHeader from '@/components/PageHeader';
+import React from 'react';
 
 const AboutPage = () => {
   return (
-    <main className="grow">
-      <PageHeader title="About" subtitle="I’m Manifest Full-time UI/UX designer Head of Design at VeronaLabs.com">
-        <p>I was born in January 1990. After getting my Degree in computer science in 2002, I persuaded my higher study in Human Computer Interaction Design. I got my first job as Graphic Designer in the year 2008. After getting experience in graphic for a year, I moved to UI-UX Designing.</p>
-        <p>In 2010, I decided to work as a Freelance Web, UI-UX & Mobile Interface Designer. I find myself still in the learning phase and have strong desire to achieve as many skills as I can.</p>
+    <main className='grow'>
+      <PageHeader
+        title='About'
+        subtitle='Building Seamless Experiences through Innovative Front End Solutions'
+      >
+        <p>{`Hi there! My name is Milap Dave, and I'm a front end developer with a passion for creativity. In addition to coding, I love exploring my interests in photography, and videography, which all contribute to my unique perspective and approach to building for the web.`}</p>
+        <p>{`Building for the web is a fascinating and rewarding experience. From a single HTML file to a large React js application, I enjoy the process of creating something from scratch and watching it come to life.`}</p>
+        <p>{`As a developer, I bring my passion and creativity to every project. I believe in building intuitive, user-friendly websites that offer a seamless experience for visitors. Whether you're looking to build a simple website or a complex web application, I'm here to help you bring your vision to life. Let's create something incredible together.`}</p>
       </PageHeader>
     </main>
   );

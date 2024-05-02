@@ -1,5 +1,5 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
 
 // Define the structure of a sub-menu item
 interface SubItem {
@@ -16,15 +16,12 @@ interface SubMenuItemProps {
 // Create the SubMenuItem component
 const SubMenuItem: React.FC<SubMenuItemProps> = ({ subItem }) => (
   // This part represents the appearance of a single sub-menu item
-  <div className="group relative flex items-center">
-    <div className="flex-auto">
+  <div className='group relative flex items-center'>
+    <div className='flex-auto'>
       {/* Create a link that leads to the specified 'href' when clicked */}
-      <Link
-        href={subItem.href}
-        className="block py-3 px-5"
-      >
+      <Link href={subItem.href} className='block px-5 py-3'>
         {subItem.title} {/* Display the title of the sub-menu item */}
-        <span className="absolute inset-0"></span>{" "}
+        <span className='absolute inset-0'></span>{' '}
         {/* Visual styling element */}
       </Link>
     </div>

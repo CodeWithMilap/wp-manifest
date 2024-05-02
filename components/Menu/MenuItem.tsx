@@ -1,7 +1,7 @@
-import React from "react";
-import SubMenuItem from "./SubMenuItem"; // Importing a component for submenu items
-import Link from "next/link"; // Importing a component for navigation links
-import { usePathname } from "next/navigation";
+import React from 'react';
+import SubMenuItem from './SubMenuItem'; // Importing a component for submenu items
+import Link from 'next/link'; // Importing a component for navigation links
+import { usePathname } from 'next/navigation';
 
 // Defining the properties expected by this MenuItem component
 interface MenuItemProps {
@@ -21,31 +21,31 @@ const MenuItem: React.FC<MenuItemProps> = ({
   // If the menu item is a button (has `isButton` property), render a button
   if (menuItem.isButton) {
     return (
-      <div className="relative" onClick={toggleSubMenu}>
+      <div className='relative' onClick={toggleSubMenu}>
         <button
-          type="button"
-          className="flex w-full justify-between lg:py-0 py-3 lg:w-auto items-center gap-x-1 "
+          type='button'
+          className='flex w-full items-center justify-between gap-x-1 py-3 lg:w-auto lg:py-0 '
         >
           {menuItem.title} {/* Display the menu item title */}
           <svg
-            className={`h-5 w-5 flex-none ${isSubMenuOpen ? "rotate-180" : ""}`}
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
+            className={`h-5 w-5 flex-none ${isSubMenuOpen ? 'rotate-180' : ''}`}
+            viewBox='0 0 20 20'
+            fill='currentColor'
+            aria-hidden='true'
           >
             <path
-              fillRule="evenodd"
-              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-              clipRule="evenodd"
+              fillRule='evenodd'
+              d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z'
+              clipRule='evenodd'
             />
           </svg>
         </button>
         <div
           className={`${
             isSubMenuOpen
-              ? "lg:transition lg:ease-out lg:duration-200 lg:opacity-100 lg:translate-y-0 block"
-              : "lg:transition lg:ease-in lg:duration-150 lg:opacity-0 lg:translate-y-1 hidden"
-          }  lg:absolute lg:left-0 lg:top-full z-10 lg:mt-7 lg:w-screen lg:max-w-md overflow-hidden   lg:shadow-3xl lg:border border-opacity-10 border-black rounded-md`}
+              ? 'block lg:translate-y-0 lg:opacity-100 lg:transition lg:duration-200 lg:ease-out'
+              : 'hidden lg:translate-y-1 lg:opacity-0 lg:transition lg:duration-150 lg:ease-in'
+          }  lg:shadow-3xl z-10 overflow-hidden rounded-md border-black border-opacity-10 lg:absolute lg:left-0   lg:top-full lg:mt-7 lg:w-screen lg:max-w-md lg:border`}
         >
           {menuItem.items?.map((subItem: any, index: number) => (
             <SubMenuItem key={index} subItem={subItem} /> // Render submenu items
@@ -58,9 +58,9 @@ const MenuItem: React.FC<MenuItemProps> = ({
     return (
       <Link
         href={menuItem.href} // Set the link destination
-        className={`block py-3 lg:py-0 uppercase text-[13px] tracking-widest font-normal border-b-2 text-Grey-900 hover:text-black ${
-          pathname === menuItem.href ? "border-black" : "border-transparent"
-        } text-blacks hover:border-black transform duration-300`}
+        className={`block border-b-2 py-3 text-[13px] font-normal uppercase tracking-widest text-Grey-900 hover:text-black lg:py-0 ${
+          pathname === menuItem.href ? 'border-black' : 'border-transparent'
+        } text-blacks transform duration-300 hover:border-black`}
       >
         {menuItem.title} {/* Display the menu item title */}
       </Link>

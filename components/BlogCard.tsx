@@ -1,7 +1,7 @@
 // components/Card.tsx
-import Image from "next/image";
-import Title from "./Title";
-import Link from "next/link";
+import Image from 'next/image';
+import Title from './Title';
+import Link from 'next/link';
 
 interface CardProps {
   imageUrl: string;
@@ -19,23 +19,25 @@ const BlogCard: React.FC<CardProps> = ({
   description,
 }) => {
   return (
-    <div className="max-w-sm flex flex-col gap-6 mb-10">
-      <Link href={'#'} className="relative overflow-hidden group block">
+    <div className='mb-10 flex max-w-sm flex-col gap-6'>
+      <Link href={'#'} className='group relative block overflow-hidden'>
         <Image
           src={imageUrl}
           width={350}
           height={250}
-          className="w-full scale-110 transition-all duration-300 group-hover:scale-100"
+          className='w-full scale-110 transition-all duration-300 group-hover:scale-100'
           alt={title} // Using title as alt
         />
       </Link>
-      <div className="leading-normal tracking-wide flex flex-col gap-4">
-        <div className="flex justify-between text-xs text-Grey-500">
+      <div className='flex flex-col gap-4 leading-normal tracking-wide'>
+        <div className='flex justify-between text-xs text-Grey-500'>
           <div>{category}</div>
           <div>{date}</div>
         </div>
-        <Title><Link href={'/blog'}>{title}</Link></Title>
-        <p className="text-Grey-700">{description}</p>
+        <Title>
+          <Link href={'/blog/1'}>{title}</Link>
+        </Title>
+        <p className='text-Grey-700'>{description}</p>
       </div>
     </div>
   );

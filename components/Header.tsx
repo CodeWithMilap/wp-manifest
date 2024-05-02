@@ -1,11 +1,11 @@
 // Import necessary modules and components
-"use client";
-import React, { useState } from "react";
-import Logo from "./Logo"; // Import the Logo component
-import menuItems from "@/constants/menuItems"; // Import the menu items from a constants file
-import MenuButton from "./Menu/MenuButton";
-import MenuItem from "./Menu/MenuItem";
-import MobileMenu from "./Menu/MobileMenu";
+'use client';
+import React, { useState } from 'react';
+import Logo from './Logo'; // Import the Logo component
+import menuItems from '@/constants/menuItems'; // Import the menu items from a constants file
+import MenuButton from './Menu/MenuButton';
+import MenuItem from './Menu/MenuItem';
+import MobileMenu from './Menu/MobileMenu';
 
 // Define the Header component
 export const Header = () => {
@@ -24,17 +24,17 @@ export const Header = () => {
   };
 
   return (
-    <header className="">
+    <header className=''>
       <nav
-        className="mx-auto max-w-screen-xl flex items-center justify-between p-6 lg:px-20 lg:py-20"
-        aria-label="Global"
+        className='mx-auto flex max-w-screen-xl items-center justify-between p-6 lg:px-20 lg:py-10'
+        aria-label='Global'
       >
-        <div className="flex lg:flex-1">
+        <div className='flex lg:flex-1'>
           <Logo /> {/* Render the Logo component here */}
         </div>
-        <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{" "}
+        <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
         {/* Render the MenuButton component here */}
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className='hidden lg:flex lg:gap-x-12'>
           {menuItems.map((menuItem, index) => (
             <MenuItem
               key={index}

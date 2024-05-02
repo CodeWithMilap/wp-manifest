@@ -1,20 +1,20 @@
-import React from "react";
-import Container from "./Container";
-import Title from "./Title";
+import React from 'react';
+import Container from './Container';
+import Title from './Title';
 
 export const IntroSection = () => {
   return (
-    <section className="md:py-10 py-5">
+    <section className='py-5 md:py-10'>
       <Container>
-        <div className="grid gap-10 lg:grid-cols-12">
-          <div className="md:col-span-5 col-span-full">
+        <div className='grid gap-10 lg:grid-cols-12'>
+          <div className='col-span-full md:col-span-5'>
             <Title>
-              {" "}
+              {' '}
               Full-time UI/UX designer <br />
               Head of Design at VeronaLabs.com
             </Title>
           </div>
-          <div className="grid md:col-span-5  col-span-full gap-5 text-xl leading-normal tracking-wide lg:col-start-8">
+          <div className='col-span-full grid  gap-5 text-xl leading-normal tracking-wide md:col-span-5 lg:col-start-8'>
             <p>
               We work with clients around the world from our headquarters in
               Charleston, South Carolina.

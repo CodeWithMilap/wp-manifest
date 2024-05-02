@@ -20,7 +20,6 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 - Utilizes Next.js for server-side rendering and client-side rendering.
 - Automatic font optimization with Inter.
 
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
