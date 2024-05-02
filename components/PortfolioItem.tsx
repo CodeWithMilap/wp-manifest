@@ -23,7 +23,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
       <Container>
         <div className='grid grid-cols-12 gap-10'>
           <div className='col-span-full md:order-2 md:col-span-6'>
-            <Link href={'#'} className='group relative block overflow-hidden'>
+            <Link href={'works/1'} className='group relative block overflow-hidden'>
               <Image
                 src={imageUrl}
                 alt={title}
