@@ -16,9 +16,10 @@ const ServicesItem = () => {
                     </path>
                 </svg>
                 <div className='flex flex-col gap-2'>
-                    <Title>Front-end Frameworks</Title>
+                    <Title className='text-2xl'>Frontend Dev
+                        React, NextJS</Title>
                     <p className="block text-base antialiased font-light leading-relaxed text-inherit">
-                        {`I'm well-versed in popular front-end frameworks like React, Angular, or Vue.js. Leveraging their capabilities, I build interactive and high-performance web applications.`}
+                        {`Passionate about UI/UX. Over 5 years of development experience in HTML, CSS, JS, React and NextJS frameworks.`}
                     </p>
                 </div>
             </div>

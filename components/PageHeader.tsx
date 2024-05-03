@@ -23,7 +23,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
             className={` ${hasChildren ? 'col-span-5' : 'col-span-7'} flex flex-col gap-6 `}
           >
             <Title
-              className='text-3xl md:text-5xl md:leading-tight'
+              className='text-3xl md:text-5xl md:leading-tight font-semibold'
               subtitle={subtitle}
             >
               {title}

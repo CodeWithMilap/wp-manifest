@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     fontFamily: {
       redHat: ['var(--font-red-hat)'],
-      lato: ['var(--font-lato)'],
+      inter: ['var(--font-inter)'],
     },
     colors: {
       primary: '#274C5B',
