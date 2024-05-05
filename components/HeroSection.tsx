@@ -20,24 +20,15 @@ export const HeroSection = () => {
     <>
       <section id='home' className=''>
         <Container>
-          <div className='grid h-full grid-cols-12 items-center gap-8 py-20'>
+          <div className='grid h-full grid-cols-12 items-center gap-8 py-20 text-black'>
             <div className='col-span-12 grid content-between  lg:col-span-12'>
-              <FadeInWhenVisible>
-                <h2 className='text-xl font-semibold md:text-2xl mb-3 text-black'>Hello, my name is Milap Dave,</h2>
-              </FadeInWhenVisible>
-              <FadeInWhenVisible>
-
-                <h2 className='text-4xl font-bold md:text-8xl mb-4 text-black'>I make websites.</h2>
-              </FadeInWhenVisible>
-              <FadeInWhenVisible>
-                <p className='md:my-6 my-3 md:text-4xl font-normal'>
-                  A front end developer based in India. I specialize in creating
-                  stunning, user-friendly websites using the latest technologies.
-                </p>
-              </FadeInWhenVisible>
-              <FadeInWhenVisible>
-                <SocialLinks />
-              </FadeInWhenVisible>
+              <h2 className='text-xl font-medium md:text-2xl mb-3'>Hello, my name is Milap Dave,</h2>
+              <h2 className='text-4xl font-bold md:text-8xl mb-4'>I make websites.</h2>
+              <p className='md:my-4 my-2 md:text-3xl '>
+                A front end developer based in India. I specialize in creating
+                stunning, user-friendly websites using the latest technologies.
+              </p>
+              <SocialLinks />
             </div>
           </div>
         </Container>
