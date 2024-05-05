@@ -8,7 +8,7 @@ const AboutPage = () => {
       <PageHeader
         title='About'
       >
-        <p className='text-2xl'>{`Building Seamless Experiences through Innovative Front End Solutions`}</p>
+        <p>{`Building Seamless Experiences through Innovative Front End Solutions`}</p>
       </PageHeader>
       <section className='py-5 md:py-10'>
         <Container>

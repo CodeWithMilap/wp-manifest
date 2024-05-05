@@ -29,13 +29,15 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           {/* Render the MenuButton component with the toggleMenu function */}
         </div>
         <div className='mt-6 flow-root py-6'>
-          <div className='divide-Gray-500/10 -my-6 divide-y'>
+          <div className='-my-6'>
             {menuItems.map((menuItem, index) => (
               <MenuItem
                 key={index}
                 menuItem={menuItem} // Pass the menu item data to MenuItem
                 toggleSubMenu={toggleSubMenu} // Pass the toggleSubMenu function to MenuItem
                 isSubMenuOpen={isSubMenuOpen} // Pass the submenu open state to MenuItem
+                toggleMenu={toggleMenu}
+
               />
             ))}
           </div>

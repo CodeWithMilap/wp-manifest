@@ -7,7 +7,7 @@ const WorksPage = () => {
   return (
     <main className='grow'>
       <PageHeader title='Works'>
-        <p className='text-2xl'>{`Thing's I've made or learned at the companies I have worked for.`}</p>
+        <p>{`Thing's I've made or learned at the companies I have worked for.`}</p>
       </PageHeader>
 
       <Container>

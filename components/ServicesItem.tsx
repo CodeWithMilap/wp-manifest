@@ -16,7 +16,7 @@ const ServicesItem = () => {
                     </path>
                 </svg>
                 <div className='flex flex-col gap-2'>
-                    <Title className='text-2xl'>Frontend Dev
+                    <Title className='md:text-2xl text-xl'>Frontend Dev
                         React, NextJS</Title>
                     <p className="block text-base antialiased font-light leading-relaxed text-inherit">
                         {`Passionate about UI/UX. Over 5 years of development experience in HTML, CSS, JS, React and NextJS frameworks.`}

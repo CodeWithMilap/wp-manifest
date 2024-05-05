@@ -41,6 +41,7 @@ export const Header = () => {
               menuItem={menuItem}
               toggleSubMenu={toggleSubMenu}
               isSubMenuOpen={isSubMenuOpen}
+              toggleMenu={toggleMenu} 
             />
           ))}
         </div>

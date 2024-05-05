@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 interface MenuItemProps {
   menuItem: any; // Data for the menu item
   toggleSubMenu: () => void; // Function to toggle submenu visibility
+  toggleMenu: () => void; // Function to toggle submenu visibility
   isSubMenuOpen: boolean; // Boolean to track if submenu is open or closed
 }
 
@@ -15,6 +16,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
   menuItem,
   toggleSubMenu,
   isSubMenuOpen,
+  toggleMenu
 }) => {
   const pathname = usePathname(); // Get the current pathname
 
@@ -61,6 +63,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
         className={`block border-b-2 py-3 text-[13px] font-normal uppercase tracking-widest text-Grey-900 hover:text-black lg:py-0 ${
           pathname === menuItem.href ? 'border-black' : 'border-transparent'
         } text-blacks transform duration-300 hover:border-black`}
+        onClick={toggleMenu}
       >
         {menuItem.title} {/* Display the menu item title */}
       </Link>

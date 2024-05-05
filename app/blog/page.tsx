@@ -6,7 +6,8 @@ import React from 'react';
 const BlogPage = () => {
   return (
     <main className='grow'>
-      <PageHeader title='Blog' />
+      <PageHeader title='Blog' ><p>Essays, learning, and other miscellaneous goodies.
+      </p></PageHeader>
       <Container>
         <div className='grid gap-8 md:grid-cols-3'>
           <BlogCard

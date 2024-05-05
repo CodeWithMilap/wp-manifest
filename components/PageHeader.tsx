@@ -18,9 +18,9 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   return (
     <section className='py-5 md:py-10'>
       <Container>
-        <div className='grid grid-cols-12 gap-10'>
+        <div className='grid md:grid-cols-12 md:gap-4 gap-2'>
           <div
-            className={` ${hasChildren ? 'col-span-5' : 'col-span-7'} flex flex-col gap-6 `}
+            className={` col-span-full flex flex-col gap-6 `}
           >
             <Title
               className='text-3xl md:text-5xl md:leading-tight font-semibold'
@@ -30,7 +30,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
             </Title>
           </div>
           {hasChildren && (
-            <div className='col-span-6 col-start-7 flex flex-col gap-6 text-xl'>
+            <div className='flex flex-col gap-6 text-xl  col-span-full'>
               {children}
             </div>
           )}

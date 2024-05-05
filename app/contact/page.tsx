@@ -18,12 +18,12 @@ const ContactPage = () => {
 
       <section className='py-5 md:py-10'>
         <Container>
-          <div className='grid grid-cols-12 gap-10'>
-            <div className='col-span-3 flex flex-col gap-6'>
+          <div className='grid md:grid-cols-12  gap-10'>
+            <div className='md:col-span-3 col-span-full flex flex-col gap-6'>
               <ContactInfo />
               <FollowUs />
             </div>
-            <div className='col-span-6 col-start-7 flex flex-col gap-6'>
+            <div className='md:col-span-6 col-span-full md:col-start-7 flex flex-col gap-6'>
               <ContactForm />
             </div>
           </div>
