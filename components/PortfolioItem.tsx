@@ -26,7 +26,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
               <Image
                 src={imageUrl}
                 alt={title}
-                className='scale-110 transition-all duration-300 group-hover:scale-100 max-w-full'
+                className='scale-110 transition-all duration-300 group-hover:scale-100 w-full'
                 height={1024}
                 width={760}
               />

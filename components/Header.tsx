@@ -6,6 +6,7 @@ import menuItems from '@/constants/menuItems'; // Import the menu items from a c
 import MenuButton from './Menu/MenuButton';
 import MenuItem from './Menu/MenuItem';
 import MobileMenu from './Menu/MobileMenu';
+import Container from './Container';
 
 // Define the Header component
 export const Header = () => {
@@ -25,36 +26,38 @@ export const Header = () => {
 
   return (
     <header className=''>
-      <nav
-        className='mx-auto flex max-w-screen-xl items-center justify-between p-6 lg:px-20 lg:py-10'
-        aria-label='Global'
-      >
-        <div className='flex lg:flex-1'>
-          <Logo /> {/* Render the Logo component here */}
-        </div>
-        <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
-        {/* Render the MenuButton component here */}
-        <div className='hidden lg:flex lg:gap-x-12'>
-          {menuItems.map((menuItem, index) => (
-            <MenuItem
-              key={index}
-              menuItem={menuItem}
-              toggleSubMenu={toggleSubMenu}
-              isSubMenuOpen={isSubMenuOpen}
-              toggleMenu={toggleMenu} 
-            />
-          ))}
-        </div>
-      </nav>
-      {/* <!-- Mobile menu, show/hide based on menu open state. --> */}
-      {isMenuOpen && (
-        <MobileMenu
-          isMenuOpen={isMenuOpen}
-          isSubMenuOpen={isSubMenuOpen}
-          toggleSubMenu={toggleSubMenu}
-          toggleMenu={toggleMenu}
-        />
-      )}
+      <Container>
+        <nav
+          className='flex items-center justify-between py-6 lg:py-10'
+          aria-label='Global'
+        >
+          <div className='flex lg:flex-1'>
+            <Logo /> {/* Render the Logo component here */}
+          </div>
+          <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
+          {/* Render the MenuButton component here */}
+          <div className='hidden lg:flex lg:gap-x-12'>
+            {menuItems.map((menuItem, index) => (
+              <MenuItem
+                key={index}
+                menuItem={menuItem}
+                toggleSubMenu={toggleSubMenu}
+                isSubMenuOpen={isSubMenuOpen}
+                toggleMenu={toggleMenu}
+              />
+            ))}
+          </div>
+        </nav>
+        {/* <!-- Mobile menu, show/hide based on menu open state. --> */}
+        {isMenuOpen && (
+          <MobileMenu
+            isMenuOpen={isMenuOpen}
+            isSubMenuOpen={isSubMenuOpen}
+            toggleSubMenu={toggleSubMenu}
+            toggleMenu={toggleMenu}
+          />
+        )}
+      </Container>
     </header>
   );
 };
