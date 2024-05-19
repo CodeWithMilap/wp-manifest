@@ -7,7 +7,7 @@ const WorkSection = () => {
     return (
         <section className='py-5 md:py-10'>
             <Container>
-                <div className='flex items-center justify-between py-5 md:py-10'>
+                <div className='flex items-center justify-between pt-5 md:py-10'>
                     <Title>My Work</Title>
                 </div>
                 <PortfolioItem
