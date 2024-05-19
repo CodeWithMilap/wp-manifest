@@ -26,42 +26,40 @@ export const Header = () => {
   };
 
   return (
-    <FadeInWhenVisible>
-      <header className=''>
-        <Container>
-          <nav
-            className='flex items-center justify-between py-6 lg:py-10'
-            aria-label='Global'
-          >
-            <div className='flex lg:flex-1'>
-              <Logo /> {/* Render the Logo component here */}
-            </div>
-            <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
-            {/* Render the MenuButton component here */}
-            <div className='hidden lg:flex lg:gap-x-12'>
-              {menuItems.map((menuItem, index) => (
-                <MenuItem
-                  key={index}
-                  menuItem={menuItem}
-                  toggleSubMenu={toggleSubMenu}
-                  isSubMenuOpen={isSubMenuOpen}
-                  toggleMenu={toggleMenu}
-                />
-              ))}
-            </div>
-          </nav>
-          {/* <!-- Mobile menu, show/hide based on menu open state. --> */}
-          {isMenuOpen && (
-            <MobileMenu
-              isMenuOpen={isMenuOpen}
-              isSubMenuOpen={isSubMenuOpen}
-              toggleSubMenu={toggleSubMenu}
-              toggleMenu={toggleMenu}
-            />
-          )}
-        </Container>
-      </header>
-    </FadeInWhenVisible>
+    <header className=''>
+      <Container>
+        <nav
+          className='flex items-center justify-between py-6 lg:py-10'
+          aria-label='Global'
+        >
+          <div className='flex lg:flex-1'>
+            <Logo /> {/* Render the Logo component here */}
+          </div>
+          <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
+          {/* Render the MenuButton component here */}
+          <div className='hidden lg:flex lg:gap-x-12'>
+            {menuItems.map((menuItem, index) => (
+              <MenuItem
+                key={index}
+                menuItem={menuItem}
+                toggleSubMenu={toggleSubMenu}
+                isSubMenuOpen={isSubMenuOpen}
+                toggleMenu={toggleMenu}
+              />
+            ))}
+          </div>
+        </nav>
+        {/* <!-- Mobile menu, show/hide based on menu open state. --> */}
+        {isMenuOpen && (
+          <MobileMenu
+            isMenuOpen={isMenuOpen}
+            isSubMenuOpen={isSubMenuOpen}
+            toggleSubMenu={toggleSubMenu}
+            toggleMenu={toggleMenu}
+          />
+        )}
+      </Container>
+    </header>
   );
 };
 

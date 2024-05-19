@@ -9,7 +9,7 @@ interface TitleProps {
 const Title: React.FC<TitleProps> = ({
   children,
   subtitle,
-  className = 'md:text-3xl text-2xl',
+  className = 'md:text-4xl text-2xl',
 }) => {
   return (
     <div>

@@ -41,7 +41,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
               <p className='md:text-lg text-black'>{description}</p>
               <p className=''>{year}</p>
             </div>
-            <Button>View More</Button>
+            <Button label='View More'/>
           </div>
         </div>
     </section>

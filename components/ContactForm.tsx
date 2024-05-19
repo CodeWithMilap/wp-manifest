@@ -13,7 +13,7 @@ const ContactForm: React.FC = () => {
         label='Message'
         placeholder='Enter your message'
       />
-      <Button>Submit</Button>
+      <Button label='Submit' />
     </form>
   );
 };

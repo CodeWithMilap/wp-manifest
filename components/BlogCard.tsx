@@ -29,12 +29,12 @@ const BlogCard: React.FC<CardProps> = ({
           alt={title} // Using title as alt
         />
       </Link>
-      <div className='flex flex-col gap-4 leading-normal tracking-wide'>
+      <div className='flex flex-col gap-2 leading-normal tracking-wide'>
         <div className='flex justify-between text-xs text-Grey-500'>
           <div>{category}</div>
           <div>{date}</div>
         </div>
-        <Title>
+        <Title className='text-2xl'>
           <Link href={'/blog/1'}>{title}</Link>
         </Title>
         <p className='text-Grey-700'>{description}</p>
