@@ -4,7 +4,7 @@ import Title from './Title';
 const ContactInfo: React.FC = () => {
   return (
     <div className='flex flex-col gap-6'>
-      <Title>Contact Information</Title>
+      <Title className='text-xl'>Contact Information</Title>
       <div>
         <div>
           <strong>Address:</strong> 123 Main St, City, Country

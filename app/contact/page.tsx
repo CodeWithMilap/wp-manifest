@@ -9,7 +9,7 @@ const ContactPage = () => {
   return (
     <main className='grow'>
       <PageHeader title=' Contact Us'>
-        <p>
+        <p className='max-w-xl'>
           If you need our help with your user account, have questions about how
           to use the platform or are experiencing technical difficulties, please
           do not hesitate to contact us.

@@ -11,7 +11,7 @@ import {
 const FollowUs: React.FC = () => {
   return (
     <div className='flex flex-col gap-6'>
-      <Title>Follow Us</Title>
+      <Title className='text-xl'>Follow Us</Title>
       <ul className='social-icons flex gap-4'>
         <li>
           <Link href={'#'}>

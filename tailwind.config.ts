@@ -10,6 +10,7 @@ const config: Config = {
     fontFamily: {
       redHat: ['var(--font-red-hat)'],
       inter: ['var(--font-inter)'],
+      noto: ['var(--font-noto)'],
     },
     colors: {
       primary: '#274C5B',
