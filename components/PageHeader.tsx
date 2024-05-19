@@ -30,7 +30,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
             </Title>
           </div>
           {hasChildren && (
-            <div className='flex flex-col gap-6 text-lg  col-span-full'>
+            <div className='flex flex-col gap-6 md:text-lg  col-span-full'>
               {children}
             </div>
           )}
