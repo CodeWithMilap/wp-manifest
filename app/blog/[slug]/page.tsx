@@ -26,7 +26,7 @@ const BlogDetail = () => {
               className='w-full mb-10'
               alt={''}
             />
-            <div className='prose m-auto lg:prose-xl'>
+            <div className='prose lg:prose-xl'>
               <p>
                 Transformation has to be driven by everybody, not just by climate groups, and we have a responsibility to use our influence to drive this. Overwhelming evidence points to the fact that we have about a decade to combat climate change caused by human activity before irreversible damage is caused. It is the biggest crisis of our generation.
               </p>

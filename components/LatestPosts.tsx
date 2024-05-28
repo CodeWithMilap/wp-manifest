@@ -11,7 +11,7 @@ export const LatestPosts = () => {
       <Container>
         <div className='flex items-center justify-between py-5 md:py-10'>
           <div>
-            <Title>Latest Posts</Title>
+            <Title className='text-2xl'>Latest Posts</Title>
           </div>
           <div>
             <Link href={'#'}>View All</Link>

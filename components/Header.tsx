@@ -8,13 +8,14 @@ import MenuItem from './Menu/MenuItem';
 import MobileMenu from './Menu/MobileMenu';
 import Container from './Container';
 import FadeInWhenVisible from './FadeInWhenVisible';
+import { StoryblokComponent } from '@storyblok/react';
 
 // Define the Header component
-export const Header = () => {
+export const Header = ({ blok }: any) => {
   // Use state to track whether the menu and sub-menu are open or not
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
-
+  console.log(blok, 'blokblokblok')
   // Function to toggle the main menu
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -38,7 +39,14 @@ export const Header = () => {
           <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
           {/* Render the MenuButton component here */}
           <div className='hidden lg:flex lg:gap-x-12'>
-            {menuItems.map((menuItem, index) => (
+            {blok?.header_menu?.map((nestedBlok: any) => (
+              <StoryblokComponent
+                className=""
+                blok={nestedBlok}
+                key={nestedBlok._uid}
+              />
+            ))}
+            {/* {menuItems.map((menuItem, index) => (
               <MenuItem
                 key={index}
                 menuItem={menuItem}
@@ -46,7 +54,7 @@ export const Header = () => {
                 isSubMenuOpen={isSubMenuOpen}
                 toggleMenu={toggleMenu}
               />
-            ))}
+            ))} */}
           </div>
         </nav>
         {/* <!-- Mobile menu, show/hide based on menu open state. --> */}

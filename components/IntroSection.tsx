@@ -2,7 +2,7 @@ import React from 'react';
 import Container from './Container';
 import Title from './Title';
 
-export const IntroSection = () => {
+export const IntroSection = ({blok}:any) => {
   return (
     <section className='py-5 md:py-10'>
       <Container>

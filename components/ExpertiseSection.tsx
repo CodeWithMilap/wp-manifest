@@ -3,18 +3,22 @@ import PageHeader from './PageHeader'
 import Container from './Container'
 import ServicesItem from './ServicesItem'
 import Title from './Title'
+import { StoryblokComponent } from '@storyblok/react/rsc'
 
-const ExpertiseSection = () => {
+const ExpertiseSection = ({ blok }: any) => {
     return (
         <section>
             <Container>
                 <div className='flex items-center justify-between py-5 md:py-10'>
-                    <Title>My Expertise</Title>
+                    <Title>{blok.title}</Title>
                 </div>
                 <div className='grid grid-cols-1 gap-8 md:grid-cols-3 pb-10'>
-                    <ServicesItem />
-                    <ServicesItem />
-                    <ServicesItem />
+                    {blok.body && blok.body.map((nestedBlok: any) => (
+                        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+                    ))}
+                    {/* <ServicesItem /> */}
+                    {/* <ServicesItem /> */}
+                    {/* <ServicesItem /> */}
                 </div>
             </Container>
         </section>

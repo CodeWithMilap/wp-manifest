@@ -22,11 +22,11 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
     <section className='py-5 md:py-10'>
         <div className='grid md:grid-cols-12 gap-10'>
           <div className='col-span-full md:order-2 md:col-span-8'>
-            <Link href={'works/1'} className='group relative block overflow-hidden w-full'>
+            <Link href={'works/1'} className='group relative block w-full'>
               <Image
                 src={imageUrl}
                 alt={title}
-                className='scale-110 transition-all duration-300 group-hover:scale-100 w-full'
+                className='w-full revealing-image'
                 height={1024}
                 width={760}
               />
