@@ -19,7 +19,7 @@ const BlogCard: React.FC<CardProps> = ({
   description,
 }) => {
   return (
-    <div className='mb-10 flex flex-col gap-6'>
+    <div className='mb-10 flex flex-col gap-6 fadeinItem fadeinItem--onView'>
       <Link href={'#'} className='group relative block overflow-hidden'>
         <Image
           src={imageUrl}

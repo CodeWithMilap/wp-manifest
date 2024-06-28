@@ -26,7 +26,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
               <Image
                 src={imageUrl}
                 alt={title}
-                className='w-full revealing-image'
+                className='w-full'
                 height={1024}
                 width={760}
               />

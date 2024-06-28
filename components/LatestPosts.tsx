@@ -9,7 +9,7 @@ export const LatestPosts = () => {
   return (
     <section className='py-5 md:py-10'>
       <Container>
-        <div className='flex items-center justify-between py-5 md:py-10'>
+        <div className='flex items-center justify-between py-5 md:py-10 fadeinItem fadeinItem--onView'>
           <div>
             <Title className='text-2xl'>Latest Posts</Title>
           </div>
@@ -18,7 +18,7 @@ export const LatestPosts = () => {
           </div>
         </div>
 
-        <div className='grid gap-8 md:grid-cols-3'>
+        <div className='grid gap-8 md:grid-cols-3 '>
           <BlogCard
             imageUrl='https://placehold.co/350x250/png'
             category='Interface Design'

@@ -1,0 +1,73 @@
+@keyframes fadeAndRise {
+    from {
+      opacity: 0;
+      transform: translateY(20px); // Start 20px below
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); // End at the original position
+    }
+  }
+  
+  @keyframes fadeAndFall {
+    from {
+      opacity: 0;
+      transform: translateY(-20px); // Start 20px above
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); // End at the original position
+    }
+  }
+
+  @keyframes clipFadeIn {
+    from {
+      opacity: 0;
+      clip-path: inset(100% 0 0 0); // Start with text clipped out of view
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0 0 0 0); // Reveal the full text
+    }
+  }
+  
+  .fadeinItem {
+    opacity: 0; // Ensure elements start invisible
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  
+  // SCSS loop to generate dynamic nth-child selectors with increasing delays
+  $max-elements: 10; // Adjust this number to the maximum number of elements you expect
+  $delay-step: 0.2s; // Delay step between each element
+  
+  @for $i from 1 through $max-elements {
+    .fadeinItem:nth-child(#{$i}) {
+      animation-delay: $i * $delay-step;
+    }
+  }
+  
+  .fadeinItem--rise {
+    animation-name: fadeAndRise;
+  }
+  
+  .fadeinItem--fall {
+    animation-name: fadeAndFall;
+  }
+  
+  .fadeinItem--clip {
+    animation-name: clipFadeIn;
+  }
+
+  // Placeholder for animation-timeline and animation-range
+.fadeinItem--onView {
+    // animation-timing-function: ease-in; 
+    opacity: 0; // Ensure elements start invisible
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-name: fadeAndRise;
+    animation-timeline: view(block 50% 0%);
+    // animation-timeline: view(block 50% 0%);
+    // animation-range: entry 5% cover 50%; // Placeholder for animation-range property
+  } 

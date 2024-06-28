@@ -27,18 +27,18 @@ export const Header = ({ blok }: any) => {
   };
 
   return (
-    <header className=''>
+    <header className=' w-full bg-white'>
       <Container>
         <nav
-          className='flex items-center justify-between py-6 lg:py-10'
+          className='flex items-center justify-between py-6 lg:py-6'
           aria-label='Global'
         >
-          <div className='flex lg:flex-1'>
+          <div className='flex lg:flex-1 fadeinItem fadeinItem--fall'>
             <Logo /> {/* Render the Logo component here */}
           </div>
           <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
           {/* Render the MenuButton component here */}
-          <div className='hidden lg:flex lg:gap-x-12'>
+          <div className='hidden lg:flex lg:gap-x-12 lg:items-center fadeinItem fadeinItem--fall'>
             {blok?.header_menu?.map((nestedBlok: any) => (
               <StoryblokComponent
                 className=""

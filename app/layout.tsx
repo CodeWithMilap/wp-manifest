@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Red_Hat_Display, Inter } from 'next/font/google';
 import './globals.css';
+import './style.scss';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { storyblokInit, apiPlugin, ISbStoriesParams, getStoryblokApi } from "@storyblok/react/rsc"

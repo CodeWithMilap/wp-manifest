@@ -10,13 +10,13 @@ export const HeroSection = () => {
         <Container>
           <div className='grid h-full md:grid-cols-12 grid-cols-none items-center gap-8 py-20 text-black'>
             <div className='md:col-span-12 grid content-between  lg:col-span-12'>
-              <h2 className='text-4xl font-bold md:text-8xl mb-3'>Hi,</h2>
-              <h2 className='text-4xl font-bold md:text-8xl mb-4'>I’m Milap Dave</h2>
-              <p className='md:my-4 my-2 md:text-2xl max-w-3xl'>
+              <h2 className='text-4xl font-bold md:text-8xl mb-3 fadeinItem fadeinItem--rise'>Hi,</h2>
+              <h2 className='text-4xl font-bold md:text-8xl mb-4 fadeinItem fadeinItem--rise'>I’m Milap Dave</h2>
+              <p className='md:my-4 my-2 md:text-2xl max-w-3xl fadeinItem fadeinItem--rise'>
                 A front end developer based in India. I specialize in creating
                 stunning, user-friendly websites using the latest technologies.
               </p>
-              <SocialLinks />
+              <SocialLinks className="fadeinItem fadeinItem--rise"/>
             </div>
           </div>
         </Container>
