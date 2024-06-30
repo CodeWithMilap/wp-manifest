@@ -18,7 +18,7 @@ export const LatestPosts = () => {
           </div>
         </div>
 
-        <div className='grid gap-8 md:grid-cols-3 '>
+        <div className='grid gap-8 md:grid-cols-3 fadeinItem--onView'>
           <BlogCard
             imageUrl='https://placehold.co/350x250/png'
             category='Interface Design'

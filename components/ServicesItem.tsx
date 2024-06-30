@@ -4,9 +4,8 @@ import Title from './Title'
 import Image from 'next/image'
 
 const ServicesItem = ({ blok }: any) => {
-    console.log(blok, 'blokblokblok')
     return (
-        <div className="relative flex flex-col bg-white bg-clip-border rounded-xl border border-Grey-300 hover:shadow-xl transform duration-200">
+        <div className="relative flex flex-col bg-white bg-clip-border rounded-xl border border-Grey-300 hover:shadow-xl transform duration-200 fadeinItem fadeinItem--rise">
             <div className="p-6 flex flex-col gap-5">
                 <Image src={blok?.icon?.filename} alt={blok?.icon?.alt} width={40} height={40}/>
                 <div className='flex flex-col gap-2'>

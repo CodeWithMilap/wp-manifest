@@ -15,7 +15,6 @@ export const Header = ({ blok }: any) => {
   // Use state to track whether the menu and sub-menu are open or not
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
-  console.log(blok, 'blokblokblok')
   // Function to toggle the main menu
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -38,7 +37,7 @@ export const Header = ({ blok }: any) => {
           </div>
           <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
           {/* Render the MenuButton component here */}
-          <div className='hidden lg:flex lg:gap-x-12 lg:items-center fadeinItem fadeinItem--fall'>
+          <div className='hidden lg:flex lg:gap-x-8 lg:items-center fadeinItem fadeinItem--fall'>
             {blok?.header_menu?.map((nestedBlok: any) => (
               <StoryblokComponent
                 className=""

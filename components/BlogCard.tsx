@@ -19,13 +19,13 @@ const BlogCard: React.FC<CardProps> = ({
   description,
 }) => {
   return (
-    <div className='mb-10 flex flex-col gap-6 fadeinItem fadeinItem--onView'>
+    <div className='mb-10 flex flex-col gap-6 '>
       <Link href={'#'} className='group relative block overflow-hidden'>
         <Image
           src={imageUrl}
           width={350}
           height={250}
-          className='w-full scale-110 transition-all duration-300 group-hover:scale-100 w-full'
+          className='w-full scale-110 transition-all duration-300 group-hover:scale-100'
           alt={title} // Using title as alt
         />
       </Link>

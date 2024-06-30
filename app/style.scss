@@ -1,7 +1,7 @@
 @keyframes fadeAndRise {
     from {
       opacity: 0;
-      transform: translateY(20px); // Start 20px below
+      transform: translateY(100px); // Start 20px below
     }
     to {
       opacity: 1;
@@ -28,6 +28,17 @@
     to {
       opacity: 1;
       clip-path: inset(0 0 0 0); // Reveal the full text
+    }
+  }
+
+  @keyframes fadeAndScale {
+    from {
+      opacity: 0;
+      transform: scale(0.55); // Start slightly smaller
+    }
+    to {
+      opacity: 1;
+      transform: scale(1); // End at the original size
     }
   }
   
@@ -60,6 +71,15 @@
     animation-name: clipFadeIn;
   }
 
+  .fadeinItem--scale {
+    opacity: 0; // Ensure elements start invisible
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-name: fadeAndScale;
+    animation-timeline: scroll();
+    animation-range: entry 25% cover 50%; // Placeholder for animation-range property
+  }
+
   // Placeholder for animation-timeline and animation-range
 .fadeinItem--onView {
     // animation-timing-function: ease-in; 
@@ -71,3 +91,33 @@
     // animation-timeline: view(block 50% 0%);
     // animation-range: entry 5% cover 50%; // Placeholder for animation-range property
   } 
+
+
+  @supports (animation-timeline: view()) {
+    .card {
+      --index0: calc(var(--index) - 1); /* 0-based index */
+      --reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
+      --reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
+    }
+
+    @keyframes scale {
+      to {
+        transform:
+          scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+      }
+    }
+
+    #cards {
+      --numcards: 3;
+      view-timeline-name: --cards-element-scrolls-in-body;
+    }
+
+    .card__content {
+      --start-range: calc(var(--index0) / var(--numcards) * 100%);
+      --end-range: calc((var(--index)) / var(--numcards) * 100%);
+
+      animation: linear scale forwards;
+      animation-timeline: --cards-element-scrolls-in-body;
+      animation-range: exit-crossing var(--start-range) exit-crossing var(--end-range);
+    }
+  }
