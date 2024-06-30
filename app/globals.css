@@ -13,3 +13,70 @@
     animation-range: entry 25% cover 50%;
     animation-duration: 1ms; /* Firefox requires this to apply the animation */
   }
+
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+  .gradient-border {
+    border-radius: 14px;
+    height: calc(100% + 2px);
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transform: translate(-1px, -1px);
+    width: calc(100% + 2px);
+  }
+
+  .gradient-border-light {
+    --angle: 0deg;
+    background: linear-gradient(
+      1turn,
+      #00ADB5,
+      #fff,
+      rgba(54, 228, 218, 0.7),
+      rgba(29, 224, 177, 0.3)
+    );
+    background: linear-gradient(
+      var(--angle),
+      #00ADB5,
+      #fff,
+      rgba(54, 228, 218, 0.7),
+      rgba(29, 224, 177, 0.3)
+    );
+  }
+  
+  .gradient-border-dark {
+    --angle: 0deg;
+    background: linear-gradient(
+      1turn,
+      hsla(0, 0%, 100%, 0.5),
+      hsla(0, 0%, 100%, 0.1),
+      #fff,
+      hsla(0, 0%, 100%, 0.3)
+    );
+    background: linear-gradient(
+      var(--angle),
+      hsla(0, 0%, 100%, 0.5),
+      hsla(0, 0%, 100%, 0.1),
+      #fff,
+      hsla(0, 0%, 100%, 0.3)
+    );
+  }
+
+  
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
+.gradient-border-box:hover .gradient-border {
+  animation: 10s rotate linear infinite;
+  opacity: 1;
+  transition: all 0.3s linear;
+}
+

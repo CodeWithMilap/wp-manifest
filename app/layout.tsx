@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { storyblokInit, apiPlugin, ISbStoriesParams, getStoryblokApi } from "@storyblok/react/rsc"
 import StoryblokProvider from "@/components/storyblok/StoryblokProvider"
+import { ThemeProvider } from 'next-themes';
 
 const inter = Inter({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -47,11 +48,13 @@ export default async function RootLayout({
     <StoryblokProvider>
       <html lang='en'>
         <body
-          className={`${red_hat.variable} ${inter.variable} flex min-h-screen flex-col font-inter font-normal text-Grey-700`}
+          className={`${inter.variable} flex min-h-screen flex-col font-inter font-normal dark:bg-background text-black dark:text-Grey-300`}
         >
-          <Header blok={data?.story?.content}/>
-          {children}
-          <Footer />
+          <ThemeProvider attribute="class">
+            <Header blok={data?.story?.content} />
+            {children}
+            <Footer />
+          </ThemeProvider>
         </body>
       </html>
     </StoryblokProvider>

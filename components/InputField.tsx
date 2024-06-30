@@ -15,7 +15,7 @@ const InputField: React.FC<InputProps> = ({
 }) => {
   return (
     <div className={`${className} flex flex-col gap-1`}>
-      <label htmlFor={label} className='text-Grey-700'>
+      <label htmlFor={label} className=''>
         {label}
       </label>
       <input

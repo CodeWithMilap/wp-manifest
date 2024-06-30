@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  darkMode: "class",
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -12,16 +13,28 @@ const config: Config = {
       inter: ['var(--font-inter)'],
       noto: ['var(--font-noto)'],
     },
+    animation: {
+      'border': 'border 4s linear infinite',
+    },
+    keyframes: {
+      'border': {
+        to: { '--border-angle': '360deg' },
+      }
+    },
     colors: {
-      primary: '#274C5B',
-      secondary: '#7EB693',
-      black: '#000000',
+      primary: '#212529',
+      secondary: '#343a40',
+      black: '#111216',
       white: '#FFFFFF',
+      background: '#111216',
+      background2: '#18181b',
       'Grey-900': '#323232',
       'Grey-700': '#565656',
       'Grey-500': '#7B7B7B',
       'Grey-300': '#CCCCCC',
       'Grey-100': '#F4F4F4',
+      'dark': '#27272A',
+      'light': '#e4e4e7',
       Errors: '#E10000',
       transparent: 'transparent',
     },

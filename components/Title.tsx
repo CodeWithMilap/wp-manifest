@@ -13,8 +13,8 @@ const Title: React.FC<TitleProps> = ({
 }) => {
   return (
     <div>
-      <h3 className={`text-black leading-normal tracking-wide font-redHat font-semibold ${className}`}>{children}</h3>
-      {subtitle && <p className='mt-5 font-redHat text-2xl'>{subtitle}</p>}
+      <h3 className={`leading-normal tracking-wide font-semibold ${className}`}>{children}</h3>
+      {subtitle && <p className='mt-5 text-2xl'>{subtitle}</p>}
     </div>
   );
 };

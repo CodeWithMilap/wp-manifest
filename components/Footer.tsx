@@ -10,7 +10,7 @@ export const Footer = () => {
 
   return (
     // Footer section with a top border and dark text color
-    <footer className='bg-Grey-100 py-10 md:mt-20 lg:py-20'>
+    <footer className='py-10 md:mt-20 lg:py-20  border-t border-light dark:border-dark'>
       <Container className='md:flex md:items-center md:justify-between'>
         {/* List of links in the footer */}
         <ul className='my-4 flex flex-wrap items-center gap-6 text-xs font-medium lg:my-5 lg:gap-x-12 lg:text-sm'>

@@ -9,6 +9,7 @@ import MobileMenu from './Menu/MobileMenu';
 import Container from './Container';
 import FadeInWhenVisible from './FadeInWhenVisible';
 import { StoryblokComponent } from '@storyblok/react';
+import DarkLightModeSwitch from './DarkLightModeSwitch';
 
 // Define the Header component
 export const Header = ({ blok }: any) => {
@@ -26,7 +27,7 @@ export const Header = ({ blok }: any) => {
   };
 
   return (
-    <header className=' w-full bg-white'>
+    <header className='border-b border-light dark:border-dark w-ful'>
       <Container>
         <nav
           className='flex items-center justify-between py-6 lg:py-6'
@@ -45,15 +46,7 @@ export const Header = ({ blok }: any) => {
                 key={nestedBlok._uid}
               />
             ))}
-            {/* {menuItems.map((menuItem, index) => (
-              <MenuItem
-                key={index}
-                menuItem={menuItem}
-                toggleSubMenu={toggleSubMenu}
-                isSubMenuOpen={isSubMenuOpen}
-                toggleMenu={toggleMenu}
-              />
-            ))} */}
+            <DarkLightModeSwitch />
           </div>
         </nav>
         {/* <!-- Mobile menu, show/hide based on menu open state. --> */}

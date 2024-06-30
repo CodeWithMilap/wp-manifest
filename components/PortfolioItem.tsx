@@ -20,7 +20,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
 }) => {
   return (
     <section className='py-5 md:py-10 fadeinItem--onView '>
-      <div className='grid md:grid-cols-12 gap-10 border border-[#e4e4e7] rounded-md overflow-hidden bg-white dark:border-[#27272A]  dark:bg-[#18181b]'>
+      <div className='grid md:grid-cols-12 gap-10 border border-light rounded-md overflow-hidden bg-white dark:border-dark dark:bg-background2'>
         <div className='col-span-full md:order-2 md:col-span-8'>
           <Link href={'works/1'} className='group relative block w-full'>
             <Image
@@ -37,8 +37,8 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
             <Title className='md:text-2xl text-xl'>{title}</Title>
             <span className='block h-[1px] w-[80px] bg-Grey-300'></span>
           </div>
-          <div className='flex flex-col gap-2 text-Grey-700'>
-            <p className='md:text-lg text-black'>{description}</p>
+          <div className='flex flex-col gap-2 '>
+            <p className='md:text-lg '>{description}</p>
             <p className=''>{year}</p>
           </div>
           <Button label='View More' />

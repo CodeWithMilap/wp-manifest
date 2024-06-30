@@ -8,7 +8,7 @@ const Notfound = () => {
       <Container>
         {' '}
         <div className='flex w-full flex-col gap-4 text-center'>
-          <h1 className='font-redHat text-5xl font-medium text-Grey-300 lg:text-[140px]'>
+          <h1 className='text-5xl font-medium text-Grey-300 lg:text-[140px]'>
             404
           </h1>
           <p className='max-w-md text-xl'>

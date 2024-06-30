@@ -31,9 +31,9 @@ const AppButton: React.FC<ButtonProps> = ({
 
   const buttonVariantClasses = {
     primary:
-      "bg-Grey-700 px-5 py-2 text-white hover:bg-black",
+      "px-5 py-2 bg-primary hover:bg-secondary border-primary hover:border-secondary text-white",
     secondary:
-      "bg-Grey-700 px-5 py-2 text-white hover:bg-black",
+      "px-5 py-2 text-white",
     white: "border-none text-pxBlack bg-white",
     link: "border-none !p-0",
     outline:
@@ -45,7 +45,7 @@ const AppButton: React.FC<ButtonProps> = ({
       {href ? (
         <Link
           href={href}
-          className={`${buttonSizeClasses[size]} ${buttonVariantClasses[variant]} font-medium tracking-wide disabled:bg-Grey-300 flex items-center justify-center border-2 transition duration-300 ease-in-out ${className}`} // Changed from customClass to className
+          className={`${buttonSizeClasses[size]} ${buttonVariantClasses[variant]} rounded-md font-medium tracking-wide disabled:bg-Grey-300 flex items-center justify-center border-2  transition duration-300 ease-in-out ${className}`} // Changed from customClass to className
         >
           {icon && <span className="mr-2">{icon}</span>}
           {label}
@@ -53,7 +53,7 @@ const AppButton: React.FC<ButtonProps> = ({
       ) : (
         <button
           type="button"
-          className={`flex items-center ${buttonSizeClasses[size]} ${buttonVariantClasses[variant]} font-medium tracking-wide  disabled:bg-Grey-300 flex  items-center justify-center border-2 transition duration-300 ease-in-out ${className}`} // Changed from customClass to className
+          className={`flex items-center ${buttonSizeClasses[size]} ${buttonVariantClasses[variant]} rounded-md font-medium tracking-wide  disabled:bg-Grey-300 flex  items-center justify-center border-2  transition duration-300 ease-in-out ${className}`} // Changed from customClass to className
           onClick={onClick}
         >
           {icon && <span className={label ? "mr-2" : ""}>{icon}</span>}

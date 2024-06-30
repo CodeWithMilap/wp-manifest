@@ -37,7 +37,7 @@ const BlogCard: React.FC<CardProps> = ({
         <Title className='text-2xl'>
           <Link href={'/blog/1'}>{title}</Link>
         </Title>
-        <p className='text-Grey-700'>{description}</p>
+        <p className=''>{description}</p>
       </div>
     </div>
   );
