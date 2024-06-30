@@ -36,7 +36,10 @@ export const Header = ({ blok }: any) => {
           <div className='flex lg:flex-1 fadeinItem fadeinItem--fall'>
             <Logo /> {/* Render the Logo component here */}
           </div>
-          <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
+          <div className='flex gap-6 items-center lg:hidden'>
+            <DarkLightModeSwitch />
+            <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
+          </div>
           {/* Render the MenuButton component here */}
           <div className='hidden lg:flex lg:gap-x-8 lg:items-center fadeinItem fadeinItem--fall'>
             {blok?.header_menu?.map((nestedBlok: any) => (
@@ -47,6 +50,7 @@ export const Header = ({ blok }: any) => {
               />
             ))}
             <DarkLightModeSwitch />
+
           </div>
         </nav>
         {/* <!-- Mobile menu, show/hide based on menu open state. --> */}

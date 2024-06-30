@@ -61,8 +61,8 @@ const MenuItem: React.FC<MenuItemProps> = ({
       <Link
         href={menuItem.href} // Set the link destination
         className={`block border-b-2 py-3 text-[13px] font-normal uppercase tracking-widest lg:py-0 ${
-          pathname === menuItem.href ? 'border-black' : 'border-transparent'
-        } text-blacks transform duration-300 hover:border-black`}
+          pathname === menuItem.href ? 'border-light dark:border-dark' : 'border-transparent'
+        } text-blacks transform duration-300 `}
         onClick={toggleMenu}
       >
         {menuItem.title} {/* Display the menu item title */}

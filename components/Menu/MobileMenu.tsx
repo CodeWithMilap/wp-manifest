@@ -1,3 +1,4 @@
+import DarkLightModeSwitch from '../DarkLightModeSwitch';
 import Logo from '../Logo';
 import MenuButton from './MenuButton'; // Import the MenuButton component
 import MenuItem from './MenuItem'; // Import the MenuItem component
@@ -22,14 +23,17 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
     <div className='lg:hidden' role='dialog' aria-modal='true'>
       {/* <!-- Background backdrop, show/hide based on slide-over state. --> */}
       <div className='fixed inset-0 z-10'></div>
-      <div className='fixed inset-y-0 right-0 z-50 w-full overflow-y-auto  bg-white px-6  py-6 sm:ring-1 sm:ring-Grey-900/10'>
-        <div className='flex items-center justify-between'>
+      <div className='fixed inset-y-0 right-0 z-50 w-full overflow-y-auto  bg-white dark:bg-background2 sm:ring-1 sm:ring-Grey-900/10'>
+        <div className='flex items-center justify-between p-6 border-b border-light dark:border-dark'>
           <Logo /> {/* Render the Logo component */}
-          <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
+          <div className='flex gap-6 items-center'>
+            <DarkLightModeSwitch />
+            <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
+          </div>
           {/* Render the MenuButton component with the toggleMenu function */}
         </div>
-        <div className='mt-6 flow-root py-6'>
-          <div className='-my-6'>
+        <div className='flow-root p-6'>
+          <div className='-my-3'>
             {menuItems.map((menuItem, index) => (
               <MenuItem
                 key={index}

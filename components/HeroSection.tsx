@@ -17,7 +17,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ blok }) => {
     <>
       <section id='home' className=''>
         <Container>
-          <div className='grid h-full md:grid-cols-12 grid-cols-none items-center gap-8 py-20 '>
+          <div className='grid h-full md:grid-cols-12 grid-cols-none items-center gap-8 py-10 lg:py-20 '>
             <div className='md:col-span-12 grid content-between  lg:col-span-12'>
               <h2 className='text-4xl font-bold md:text-8xl mb-3 fadeinItem fadeinItem--rise'>{blok?.title}</h2>
               <h2 className='text-4xl font-bold md:text-8xl mb-4 fadeinItem fadeinItem--rise'>{blok?.subtitle}</h2>
