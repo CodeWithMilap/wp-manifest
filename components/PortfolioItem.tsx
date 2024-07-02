@@ -32,7 +32,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
             />
           </Link>
         </div>
-        <div className='col-span-full flex flex-col gap-6 md:col-span-4 p-5'>
+        <div className='col-span-full flex flex-col gap-6 md:col-span-4 p-8'>
           <div className='flex flex-col gap-3'>
             <Title className='md:text-2xl text-xl'>{title}</Title>
             <span className='block h-[1px] w-[80px] bg-Grey-300'></span>

@@ -10,9 +10,9 @@ import {
 
 const FollowUs: React.FC = () => {
   return (
-    <div className='flex flex-col gap-6'>
+    <div className='flex flex-col gap-4'>
       <Title className='text-xl'>Follow Us</Title>
-      <ul className='social-icons flex gap-4'>
+      <ul className='social-icons flex gap-4 dark:text-Grey-300'>
         <li>
           <Link href={'#'}>
             <IconFacebook />
