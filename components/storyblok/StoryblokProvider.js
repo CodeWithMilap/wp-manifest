@@ -14,6 +14,8 @@ import WorkSection from "../WorkSection";
 import { LatestPosts } from "../LatestPosts";
 import MenuLink from './MenuLink'
 import ServicesItem from "../ServicesItem";
+import AllArticles from "./AllArticles";
+import Article from "./Article";
 const components = {
   feature: Feature,
   grid: Grid,
@@ -25,7 +27,9 @@ const components = {
   ExpertiseSection: ExpertiseSection,
   WorkSection: WorkSection,
   LatestPosts: LatestPosts,
-  ServicesItem: ServicesItem
+  ServicesItem: ServicesItem,
+  AllArticles: AllArticles,
+  article: Article
 };
 
 /** 2. Initialize it as usual */
