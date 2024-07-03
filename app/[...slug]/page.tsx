@@ -14,7 +14,7 @@ async function fetchData(slug: string) {
   const sbParams: ISbStoriesParams = {
     resolve_links: "url",
     version: isDev || isDraft ? "draft" : "published",
-    cv: isDev || isDraft ? Date.now() : undefined,
+    cv:  Date.now() 
   };
 
   const storyblokApi = getStoryblokApi();
