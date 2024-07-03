@@ -20,7 +20,7 @@ async function fetchData(slug: string) {
   const storyblokApi = getStoryblokApi();
 
   // Fetch data from the Storyblok API and return the promise
-  return storyblokApi?.get(`cdn/stories/${slug}`, sbParams)
+  return storyblokApi?.get(`cdn/stories/${slug}`, sbParams, { cache: 'no-store' })
     .then((data) => {
       return data;
     })
