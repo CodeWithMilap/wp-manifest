@@ -33,7 +33,7 @@ const LatestPosts: React.FC<AllArticlesProps> = ({ blok }) => {
   const [data, setData] = useState<Article[]>([]);
 
   // Convert the string value to a number for items per page
-  const ITEMS_PER_PAGE = 3; // parseInt(blok.show_posts, 10);
+  const ITEMS_PER_PAGE = 4; // parseInt(blok.show_posts, 10);
 
   useEffect(() => {
     getData(ITEMS_PER_PAGE, page);

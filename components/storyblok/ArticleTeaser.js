@@ -10,7 +10,7 @@ const ArticleTeaser = ({ article }) => {
                     src={article.image.filename}
                     width={350}
                     height={250}
-                    className='w-full scale-110 transition-all duration-300 group-hover:scale-100'
+                    className='w-full scale-110 transition-all duration-300 group-hover:scale-100 aspect-video object-cover'
                     alt={article.image.alt} // Using title as alt
                 />
             </Link>
