@@ -3,7 +3,6 @@ import Link from "next/link";
 import Title from "../Title";
 
 const ArticleTeaser = ({ article }) => {
-    console.log(article, 'article')
     return (
         <div className='mb-10 flex flex-col border border-light dark:border-dark rounded-xl overflow-hidden'>
             <Link href={`/blog/${article.slug}`} className='group relative block overflow-hidden'>
@@ -21,11 +20,11 @@ const ArticleTeaser = ({ article }) => {
                         {/* <div>{category}</div>
                             <div>{date}</div> */}
                     </div>
-                    <Title className='text-2xl'>
+                    <Title className='text-lg'>
                         <Link href={`/blog/${article.slug}`}>{article.title}</Link>
                     </Title>
                 </div>
-                <p className=''>{article.teaser}</p>
+                <p className='text-sm'>{article.teaser}</p>
             </div>
         </div>
     )

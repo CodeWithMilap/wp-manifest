@@ -11,7 +11,7 @@ import { HeroSection } from "../HeroSection";
 import { IntroSection } from "../IntroSection";
 import ExpertiseSection from "../ExpertiseSection";
 import WorkSection from "../WorkSection";
-import { LatestPosts } from "../LatestPosts";
+import LatestPosts  from "../LatestPosts";
 import MenuLink from './MenuLink'
 import ServicesItem from "../ServicesItem";
 import AllArticles from "./AllArticles";
