@@ -14,6 +14,7 @@ interface ArticleProps {
     date: string; // You can specify the date format or use a Date object
     title: string;
     content: any; // Adjust the type for content as per your data structure
+    body: any
   };
 }
 
@@ -38,11 +39,9 @@ const Article: React.FC<ArticleProps> = ({ blok }) => {
             </h1>
           </div>
         </div>
-        <div className=''>
-          <div className='prose mb-8 text-justify leading-relaxed lg:prose-xl'>
-            {<RichTextRenderer content={blok.content} />}
-          </div>
-        </div>
+        {blok?.body?.map((nestedBlok: any) => (
+          <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+        ))}
       </div>
     </section>
   );

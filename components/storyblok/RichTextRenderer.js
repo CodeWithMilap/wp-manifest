@@ -9,6 +9,7 @@ import {
   NODE_HEADING,
   MARK_LINK,
   LinkCustomAttributes,
+  NODE_CODEBLOCK
 } from 'storyblok-rich-text-react-renderer'; // Import required modules
 
 // Define the RichTextRenderer component
@@ -61,6 +62,11 @@ const RichTextRenderer = ({ content }) => {
         {children} {/* Display the check icon and content */}
       </li>
     ),
+    [NODE_CODEBLOCK]: (children, node) => (
+      <pre className="bg-gray-200 p-4 rounded-md">
+        <code>{node.text}</code>
+      </pre>
+    ), // Render code blocks with custom styling
   };
 
   // Define custom mark renderers for links using MARK_LINK
@@ -81,10 +87,10 @@ const RichTextRenderer = ({ content }) => {
   const renderedContent = render(content, {
     nodeResolvers: customNodeRenderers,
     // markResolvers: customMarkRenderers,
-    // defaultBlokResolver: (name, props) => {
-    //   const blok = { ...props, component: name };
-    //   return <StoryblokComponent blok={blok} key={props._uid} />;
-    // },
+    defaultBlokResolver: (name, props) => {
+      const blok = { ...props, component: name };
+      return <StoryblokComponent blok={blok} key={props._uid} />;
+    },
   });
 
   return (

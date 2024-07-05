@@ -16,6 +16,8 @@ import MenuLink from './MenuLink'
 import ServicesItem from "../ServicesItem";
 import AllArticles from "./AllArticles";
 import Article from "./Article";
+import ContentBlock from "./ContentBlock";
+import CodeHighlighter  from './CodeHighlighter'
 const components = {
   feature: Feature,
   grid: Grid,
@@ -29,7 +31,9 @@ const components = {
   LatestPosts: LatestPosts,
   ServicesItem: ServicesItem,
   AllArticles: AllArticles,
-  article: Article
+  article: Article,
+  content_block: ContentBlock,
+  CodeHighlighter:CodeHighlighter
 };
 
 /** 2. Initialize it as usual */
