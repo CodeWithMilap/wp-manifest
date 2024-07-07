@@ -19,6 +19,8 @@ import Article from './Article';
 import ContentBlock from './ContentBlock';
 import CodeHighlighter from './CodeHighlighter';
 import YouTubeVideo from './YouTubeVideo';
+import PageHeader from '../PageHeader';
+import Section from '../Section';
 const components = {
   feature: Feature,
   grid: Grid,
@@ -36,6 +38,8 @@ const components = {
   content_block: ContentBlock,
   CodeHighlighter: CodeHighlighter,
   YouTubeVideo: YouTubeVideo,
+  PageHeader:PageHeader,
+  Section:Section
 };
 
 /** 2. Initialize it as usual */

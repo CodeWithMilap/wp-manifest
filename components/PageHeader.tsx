@@ -3,17 +3,10 @@ import Container from './Container';
 import Title from './Title';
 
 interface PageHeaderProps {
-  title?: string;
-  subtitle?: string;
-  children?: ReactNode;
+  blok:any
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({
-  title,
-  subtitle,
-  children,
-}) => {
-  const hasChildren = !!children; // Check if children are available
+const PageHeader: React.FC<PageHeaderProps> = ({blok}) => {
 
   return (
     <section className='py-5 md:py-10'>
@@ -24,16 +17,16 @@ const PageHeader: React.FC<PageHeaderProps> = ({
           >
             <Title
               className='text-3xl md:text-5xl md:leading-tight font-semibold'
-              subtitle={subtitle}
+              subtitle={blok?.description}
             >
-              {title}
+              {blok?.title}
             </Title>
           </div>
-          {hasChildren && (
+          {/* {blok?.description && (
             <div className='flex flex-col gap-6 md:text-lg  col-span-full'>
-              {children}
+              {blok?.description}
             </div>
-          )}
+          )} */}
         </div>
       </Container>
     </section>
