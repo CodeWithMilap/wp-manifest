@@ -2,25 +2,40 @@ import {
   ISbStoriesParams,
   getStoryblokApi,
   StoryblokStory,
-} from "@storyblok/react/rsc";
-import { draftMode } from "next/headers";
+} from '@storyblok/react/rsc';
+import { draftMode } from 'next/headers';
+import { ReactElement } from 'react';
 
-const isDev = process.env.NEXT_PUBLIC_STORYBLOK_VERSION === "draft";
+const isDev = process.env.NEXT_PUBLIC_STORYBLOK_VERSION === 'draft';
 export const revalidate = isDev ? 0 : 3600;
 
-async function fetchData(slug: string) {
+type Props = {
+  params: { slug: string[] };
+};
+
+export default async function Page({
+  params,
+}: {
+  params: { slug: string[]; locale: string };
+}): Promise<ReactElement> {
+  const { data } = await fetchData(params.slug);
+  return <> {data.story && <StoryblokStory story={data?.story} />} </>;
+}
+
+async function fetchData(slug: string[]) {
+  const _slug = slug || ['home'];
+  const storyblokApi = getStoryblokApi();
 
   const { isEnabled: isDraft } = draftMode();
   const sbParams: ISbStoriesParams = {
-    resolve_links: "url",
-    version: isDev || isDraft ? "draft" : "published",
-    cv:  Date.now() 
+    resolve_links: 'url',
+    version: isDev || isDraft ? 'draft' : 'published',
+    cv: Date.now(),
   };
 
-  const storyblokApi = getStoryblokApi();
-
   // Fetch data from the Storyblok API and return the promise
-  return storyblokApi?.get(`cdn/stories/${slug}`, sbParams, { cache: 'no-store' })
+  return storyblokApi
+    ?.get(`cdn/stories/${_slug.join('/')}`, sbParams)
     .then((data) => {
       return data;
     })
@@ -29,21 +44,6 @@ async function fetchData(slug: string) {
     });
 }
 
-type Props = {
-  params: { slug: string[] };
-};
-
-export default async function Home({ params }: Props) {
-  const slug = params?.slug ? params.slug.join("/") : "home";
-  const { data } = await fetchData(slug);
-  return (
-    <>
-      {data.story &&
-        <StoryblokStory story={data?.story} />
-      }
-    </>
-  );
-}
 export async function generateStaticParams(): Promise<Array<object>> {
   const preview = process.env.NEXT_PUBLIC_STORYBLOK_VERSION === 'draft';
   const storyblokApi = getStoryblokApi();
