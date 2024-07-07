@@ -6,9 +6,9 @@ import React from 'react';
 const WorksPage = () => {
   return (
     <main className='grow'>
-      <PageHeader title='Works'>
+      {/* <PageHeader title='Works'>
         <p>{`Thing's I've made or learned at the companies I have worked for.`}</p>
-      </PageHeader>
+      </PageHeader> */}
 
       <Container>
         <PortfolioItem
