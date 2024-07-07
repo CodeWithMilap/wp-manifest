@@ -1,17 +1,7 @@
-import {
-  ISbStoriesParams,
-  getStoryblokApi,
-  StoryblokStory,
-} from '@storyblok/react/rsc';
-import { draftMode } from 'next/headers';
-import { ReactElement } from 'react';
-
-const isDev = process.env.NEXT_PUBLIC_STORYBLOK_VERSION === 'draft';
-export const revalidate = isDev ? 0 : 3600;
-
-type Props = {
-  params: { slug: string[] };
-};
+import React, { ReactElement } from 'react';
+import { ISbStoriesParams, getStoryblokApi } from '@storyblok/react/rsc';
+import StoryblokStory from '@storyblok/react/story';
+import type { Metadata } from 'next';
 
 export default async function Page({
   params,
@@ -19,29 +9,75 @@ export default async function Page({
   params: { slug: string[]; locale: string };
 }): Promise<ReactElement> {
   const { data } = await fetchData(params.slug);
-  return <> {data.story && <StoryblokStory story={data?.story} />} </>;
+
+  // Render the StoryblokStory component if there's valid data
+  return <>{data?.story && <StoryblokStory story={data?.story} />}</>;
 }
 
-async function fetchData(slug: string[]) {
+// Function to fetch data from the Storyblok API
+const fetchData = (slug: string[]) => {
   const _slug = slug || ['home'];
   const storyblokApi = getStoryblokApi();
 
-  const { isEnabled: isDraft } = draftMode();
+  // Determine the version to fetch based on the environment (preview or published)
+  const preview = process.env.NEXT_PUBLIC_STORYBLOK_VERSION === 'draft';
   const sbParams: ISbStoriesParams = {
+    version: preview ? 'draft' : 'published',
     resolve_links: 'url',
-    version: isDev || isDraft ? 'draft' : 'published',
-    cv: Date.now(),
   };
 
-  // Fetch data from the Storyblok API and return the promise
+  // Fetch data from the Storyblok API
   return storyblokApi
-    ?.get(`cdn/stories/${_slug.join('/')}`, sbParams)
+    .get(`cdn/stories/${_slug.join('/')}`, sbParams)
     .then((data) => {
       return data;
     })
     .catch((e) => {
       return { data: JSON.parse(e) };
     });
+};
+
+// Function to generate metadata for the page
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string[]; locale: string };
+}): Promise<Metadata> {
+  const { data } = await fetchData(params.slug);
+
+  try {
+    // Extract metadata values from the Storyblok content
+    const title =
+      data?.story?.content.seo_metatags?.title || data?.story?.name || '';
+    const description = data?.story?.content.seo_metatags?.description || '';
+    const og_title = data?.story?.content.seo_metatags?.og_title;
+    const og_description = data?.story?.content.seo_metatags?.og_description;
+    const og_image = data?.story?.content.seo_metatags?.og_image;
+    const twitter_title = data?.story?.content.seo_metatags?.twitter_title;
+    const twitter_description =
+      data?.story?.content.seo_metatags?.twitter_description;
+    const twitter_image = data?.story?.content.seo_metatags?.twitter_image;
+
+    // Create and return metadata object with extracted values
+    return {
+      title,
+      description,
+      openGraph: {
+        title: og_title,
+        description: og_description,
+        images: og_image,
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: twitter_title,
+        description: twitter_description,
+        images: twitter_image,
+      },
+    };
+  } catch (error) {
+    console.error('Error generating metadata:', error);
+    throw error;
+  }
 }
 
 export async function generateStaticParams(): Promise<Array<object>> {
@@ -67,6 +103,6 @@ export async function generateStaticParams(): Promise<Array<object>> {
     currentPage++;
   }
   return allStories.map((x: any) => {
-    return { slug: x.full_slug.split('/') };
+    return { slug: x.full_slug.split("/") };
   });
 }

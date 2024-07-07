@@ -2,6 +2,7 @@ import BlogCard from '@/components/BlogCard';
 import Container from '@/components/Container';
 import PageHeader from '@/components/PageHeader';
 import Title from '@/components/Title';
+import { getStoryblokApi } from '@storyblok/react';
 import Image from 'next/image';
 import React from 'react';
 
@@ -62,3 +63,31 @@ const BlogDetail = () => {
 };
 
 export default BlogDetail;
+
+
+export async function generateStaticParams(): Promise<Array<object>> {
+  const preview = process.env.NEXT_PUBLIC_STORYBLOK_VERSION === 'draft';
+  const storyblokApi = getStoryblokApi();
+  const perPage = 100; // You can change this value as needed.
+  let currentPage = 1;
+  let allStories = [] as any;
+
+  while (true) {
+    const stories = await storyblokApi.get(`cdn/stories`, {
+      per_page: perPage,
+      page: currentPage,
+      version: preview ? 'draft' : 'published',
+      // excluding_slugs: "config,find-a-members/*,member-resources/*,about/*,members-only/*,news-and-events/*"
+    });
+    const currentStories = stories?.data?.stories || [];
+    if (currentStories.length === 0) {
+      break; // No more results, exit the loop.
+    }
+
+    allStories = [...allStories, ...currentStories];
+    currentPage++;
+  }
+  return allStories.map((x: any) => {
+    return { slug: x.full_slug.split("/") };
+  });
+}
