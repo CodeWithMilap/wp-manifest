@@ -1,29 +1,30 @@
 /** 1. Tag it as a client component */
-"use client";
-import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
+'use client';
+import { storyblokInit, apiPlugin } from '@storyblok/react/rsc';
 
 /** Import your components */
-import Page from "./Page";
-import Teaser from "./Teaser";
-import Feature from "./Feature";
-import Grid from "./Grid";
-import { HeroSection } from "../HeroSection";
-import { IntroSection } from "../IntroSection";
-import ExpertiseSection from "../ExpertiseSection";
-import WorkSection from "../WorkSection";
-import LatestPosts  from "../LatestPosts";
-import MenuLink from './MenuLink'
-import ServicesItem from "../ServicesItem";
-import AllArticles from "./AllArticles";
-import Article from "./Article";
-import ContentBlock from "./ContentBlock";
-import CodeHighlighter  from './CodeHighlighter'
+import Page from './Page';
+import Teaser from './Teaser';
+import Feature from './Feature';
+import Grid from './Grid';
+import { HeroSection } from '../HeroSection';
+import { IntroSection } from '../IntroSection';
+import ExpertiseSection from '../ExpertiseSection';
+import WorkSection from '../WorkSection';
+import LatestPosts from '../LatestPosts';
+import MenuLink from './MenuLink';
+import ServicesItem from '../ServicesItem';
+import AllArticles from './AllArticles';
+import Article from './Article';
+import ContentBlock from './ContentBlock';
+import CodeHighlighter from './CodeHighlighter';
+import YouTubeVideo from './YouTubeVideo';
 const components = {
   feature: Feature,
   grid: Grid,
   teaser: Teaser,
   page: Page,
-  'menu_link': MenuLink,
+  menu_link: MenuLink,
   HeroSection: HeroSection,
   IntroSection: IntroSection,
   ExpertiseSection: ExpertiseSection,
@@ -33,7 +34,8 @@ const components = {
   AllArticles: AllArticles,
   article: Article,
   content_block: ContentBlock,
-  CodeHighlighter:CodeHighlighter
+  CodeHighlighter: CodeHighlighter,
+  YouTubeVideo: YouTubeVideo,
 };
 
 /** 2. Initialize it as usual */
@@ -41,7 +43,7 @@ storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_API_TOKEN,
   use: [apiPlugin],
   apiOptions: {
-    region: "eu",
+    region: 'eu',
   },
   components,
 });
