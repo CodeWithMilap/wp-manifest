@@ -30,7 +30,7 @@ const Article: React.FC<ArticleProps> = ({ blok }) => {
             width={1920}
             height={1080}
           />
-          <div className='flex w-full flex-col items-center justify-center text-center'>
+          <div className='flex w-full flex-col items-center justify-center text-center max-w-screen-xl mx-auto'>
             {/* <div className='text-slate-200 mb-4'>
               {moment(blok.date).format('Do MMMM YYYY')}
             </div> */}

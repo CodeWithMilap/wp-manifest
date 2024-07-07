@@ -9,11 +9,14 @@ import {
   NODE_HEADING,
   MARK_LINK,
   LinkCustomAttributes,
-  NODE_CODEBLOCK
+  NODE_CODEBLOCK,
+  MARK_CODE
 } from 'storyblok-rich-text-react-renderer'; // Import required modules
 
 // Define the RichTextRenderer component
 const RichTextRenderer = ({ content }) => {
+  console.log(content);
+
   // Define custom node renderers for ul and li elements
   const customNodeRenderers = {
     [NODE_UL]: (children) => (
@@ -62,31 +65,19 @@ const RichTextRenderer = ({ content }) => {
         {children} {/* Display the check icon and content */}
       </li>
     ),
-    [NODE_CODEBLOCK]: (children, node) => (
-      <pre className="bg-gray-200 p-4 rounded-md">
-        <code>{node.text}</code>
-      </pre>
-    ), // Render code blocks with custom styling
   };
 
   // Define custom mark renderers for links using MARK_LINK
   const customMarkRenderers = {
-    [MARK_LINK]: (children) => (
-      <Link
-        href={props?.href}
-        target={props?.target}
-        rel={props?.custom?.rel}
-        title={props?.custom?.title}
-      >
-        {children}
-      </Link>
-    ), // Render MARK_LINK as anchor tags with a blue color and underline
+    [MARK_CODE]: (children) => (
+        <code className='bg-Grey-300/30 p-1 rounded-md'>{children}</code>
+    ), // Render code blocks with custom styling
   };
 
   // Render the rich text content with custom node renderers
   const renderedContent = render(content, {
     nodeResolvers: customNodeRenderers,
-    // markResolvers: customMarkRenderers,
+    markResolvers: customMarkRenderers,
     defaultBlokResolver: (name, props) => {
       const blok = { ...props, component: name };
       return <StoryblokComponent blok={blok} key={props._uid} />;
@@ -94,7 +85,8 @@ const RichTextRenderer = ({ content }) => {
   });
 
   return (
-    <div className={`rich_text_box prose max-w-none`}>{renderedContent}</div>
+    <div className={`rich_text_box prose prose-th:text-left dark:prose-invert prose-code:font-code  prose-pre:bg-[#1e293b] prose-headings:scroll-m-20 w-full max-w-none`}>
+      { renderedContent}</div>
   ); // Render the rendered content
 };
 
