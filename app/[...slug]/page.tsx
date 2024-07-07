@@ -41,22 +41,21 @@ const fetchData = (slug: string[]) => {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string[]; locale: string };
+  params: { slug: string[] };
 }): Promise<Metadata> {
   const { data } = await fetchData(params.slug);
-
   try {
     // Extract metadata values from the Storyblok content
     const title =
-      data?.story?.content.seo_metatags?.title || data?.story?.name || '';
-    const description = data?.story?.content.seo_metatags?.description || '';
-    const og_title = data?.story?.content.seo_metatags?.og_title;
-    const og_description = data?.story?.content.seo_metatags?.og_description;
-    const og_image = data?.story?.content.seo_metatags?.og_image;
-    const twitter_title = data?.story?.content.seo_metatags?.twitter_title;
+      data?.story?.content?.title || data?.story?.name || '';
+    const description = data?.story?.content?.description || '';
+    const og_title = data?.story?.content?.title;
+    const og_description = data?.story?.content?.description;
+    const og_image = data?.story?.content?.og_image;
+    const twitter_title = data?.story?.content?.title;
     const twitter_description =
-      data?.story?.content.seo_metatags?.twitter_description;
-    const twitter_image = data?.story?.content.seo_metatags?.twitter_image;
+      data?.story?.content?.description;
+    const twitter_image = data?.story?.content?.og_image;
 
     // Create and return metadata object with extracted values
     return {

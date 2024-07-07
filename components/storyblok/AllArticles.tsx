@@ -30,7 +30,7 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
   const [data, setData] = useState<Article[]>([]);
 
   // Convert the string value to a number for items per page
-  const ITEMS_PER_PAGE = 4; // parseInt(blok.show_posts, 10);
+  const ITEMS_PER_PAGE = 6; // parseInt(blok.show_posts, 10);
 
   useEffect(() => {
     getData(ITEMS_PER_PAGE, page);
@@ -121,7 +121,7 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
     setCheckedTags(tag === 'All' ? undefined : tag);
   };
   return (
-    <div className='px-5 py-10 lg:px-24'>
+    <section className=''>
       <Container>
         <div
           className={`grid w-full gap-8  md:grid-cols-3`}
@@ -131,7 +131,7 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
             <ArticleTeaser article={article} key={article.slug} />
           ))}
         </div>
-        {newDataLoaded && blok.style === 'all' && (
+        {newDataLoaded && (
           <div className='pt-20 text-center'>
             <button
               className='inline-flex rounded-sm bg-dark px-6 py-3 text-base font-semibold text-white hover:bg-black'
@@ -142,7 +142,7 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
           </div>
         )}
       </Container>
-    </div>
+    </section>
   );
 };
 

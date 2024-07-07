@@ -9,7 +9,7 @@ interface PageHeaderProps {
 const PageHeader: React.FC<PageHeaderProps> = ({blok}) => {
 
   return (
-    <section className='py-5 md:py-10'>
+    <section className='py-8 md:py-20'>
       <Container>
         <div className='grid md:grid-cols-12 gap-2'>
           <div
