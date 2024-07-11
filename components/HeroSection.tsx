@@ -12,7 +12,6 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ blok }) => {
-  console.log(blok, 'blokblokblok')
   return (
     <>
       <section id='home' className=''>
