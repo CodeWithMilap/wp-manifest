@@ -15,8 +15,6 @@ import {
 
 // Define the RichTextRenderer component
 const RichTextRenderer = ({ content }) => {
-  console.log(content);
-
   // Define custom node renderers for ul and li elements
   const customNodeRenderers = {
     [NODE_UL]: (children) => (
