@@ -39,6 +39,9 @@ const config: Config = {
       transparent: 'transparent',
     },
     extend: {
+      // writingMode: {
+      //   'vertical-rl': 'vertical-rl',
+      // },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -48,6 +51,14 @@ const config: Config = {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    function ({ addUtilities }: any) {
+      const newUtilities = {
+        '.vertical-rl': {
+          writingMode: 'vertical-rl',
+        },
+      }
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    },
   ],
 };
 export default config;

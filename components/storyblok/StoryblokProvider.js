@@ -21,6 +21,7 @@ import CodeHighlighter from './CodeHighlighter';
 import YouTubeVideo from './YouTubeVideo';
 import PageHeader from '../PageHeader';
 import Section from '../Section';
+import FeaturedProjects from './FeaturedProjects';
 const components = {
   feature: Feature,
   grid: Grid,
@@ -39,7 +40,8 @@ const components = {
   CodeHighlighter: CodeHighlighter,
   YouTubeVideo: YouTubeVideo,
   PageHeader:PageHeader,
-  Section:Section
+  Section:Section,
+  FeaturedProjects:FeaturedProjects
 };
 
 /** 2. Initialize it as usual */

@@ -10,6 +10,7 @@ import Container from './Container';
 import FadeInWhenVisible from './FadeInWhenVisible';
 import { StoryblokComponent } from '@storyblok/react';
 import DarkLightModeSwitch from './DarkLightModeSwitch';
+import SocialLinks from './SocialLinks';
 
 // Define the Header component
 export const Header = ({ blok }: any) => {
@@ -27,10 +28,10 @@ export const Header = ({ blok }: any) => {
   };
 
   return (
-    <header className='border-b border-light dark:border-dark w-ful'>
-      <Container>
+    <>
+      <header className='border-b border-light dark:border-dark w-full fixed top-0 left-0 bg-white dark:bg-Grey-900 z-50'>
         <nav
-          className='flex items-center justify-between py-6 lg:py-6'
+          className='flex items-center justify-between py-6 lg:py-6 px-6 lg:px-20'
           aria-label='Global'
         >
           <div className='flex lg:flex-1 fadeinItem fadeinItem--fall'>
@@ -62,8 +63,8 @@ export const Header = ({ blok }: any) => {
             toggleMenu={toggleMenu}
           />
         )}
-      </Container>
-    </header>
+      </header>
+    </>
   );
 };
 

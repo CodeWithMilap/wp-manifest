@@ -83,7 +83,7 @@ const LatestPosts: React.FC<AllArticlesProps> = ({ blok }) => {
           </div>
         </div>
 
-        <div className='grid gap-8 md:grid-cols-4 fadeinItem--onView' {...storyblokEditable(blok)}>
+        <div className='grid gap-8 md:grid-cols-2 xl:grid-cols-4 fadeinItem--onView' {...storyblokEditable(blok)}>
           {data.map((article) => (
             <ArticleTeaser article={article} key={article.slug} />
           ))}
