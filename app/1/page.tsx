@@ -10,7 +10,7 @@ const WorksPage = () => {
         <p>{`Thing's I've made or learned at the companies I have worked for.`}</p>
       </PageHeader> */}
 
-      <Container>
+      {/* <Container>
         <PortfolioItem
           title='Project Title'
           description='Description of the project goes here.'
@@ -29,7 +29,7 @@ const WorksPage = () => {
           year='2022'
           imageUrl='https://placehold.co/1200x760/png'
         />
-      </Container>
+      </Container> */}
     </main>
   );
 };
