@@ -7,7 +7,7 @@ import { StoryblokComponent } from '@storyblok/react/rsc'
 
 const ExpertiseSection = ({ blok }: any) => {
     return (
-        <section className='fadeinItem fadeinItem--rise'>
+        <section className=''>
             <Container>
                 <div className='flex items-center justify-between py-5 md:py-10'>
                     <Title>{blok?.title}</Title>

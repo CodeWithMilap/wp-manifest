@@ -6,26 +6,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface PortfolioItemProps {
-  title: string;
-  description: string;
-  year: string;
-  imageUrl: string;
+  blok: any
 }
 
-const PortfolioItem: React.FC<PortfolioItemProps> = ({
-  title,
-  description,
-  year,
-  imageUrl,
-}) => {
+const PortfolioItem: React.FC<PortfolioItemProps> = ({ blok }) => {
+  const item = blok.content
   return (
-    <section className='py-5 md:py-10 fadeinItem--onView '>
+    <section className='py-5 md:py-10'>
       <div className='grid md:grid-cols-12 gap-10 border border-light rounded-md overflow-hidden bg-white dark:border-dark dark:bg-background2'>
         <div className='col-span-full md:order-2 md:col-span-8'>
-          <Link href={'works/1'} className='group relative block w-full'>
+          <Link href={`/projects/${blok.slug}`} className='group relative block w-full'>
             <Image
-              src={imageUrl}
-              alt={title}
+              src={item?.image?.filename}
+              alt={''}
               className='w-full'
               height={1024}
               width={760}
@@ -34,12 +27,12 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
         </div>
         <div className='col-span-full flex flex-col gap-6 md:col-span-4 p-8'>
           <div className='flex flex-col gap-3'>
-            <Title className='md:text-2xl text-xl'>{title}</Title>
+            <Title className='md:text-2xl text-xl'>{item?.title}</Title>
             <span className='block h-[1px] w-[80px] bg-Grey-300'></span>
           </div>
           <div className='flex flex-col gap-2 '>
-            <p className='md:text-lg '>{description}</p>
-            <p className=''>{year}</p>
+            <p className='md:text-lg '>{item?.teaser}</p>
+            {/* <p className=''>{year}</p> */}
           </div>
           <Button label='View More' />
         </div>

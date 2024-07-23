@@ -7,10 +7,10 @@ const WorkSection = () => {
     return (
         <section  className='py-5 md:py-10'>
             <Container>
-                <div className='flex items-center justify-between pt-5 md:pt-10 fadeinItem--onView'>
+                <div className='flex items-center justify-between pt-5 md:pt-10'>
                     <Title>My Work</Title>
                 </div>
-                <PortfolioItem
+                {/* <PortfolioItem
                     title='Project Title'
                     description='Description of the project goes here.'
                     year='2022'
@@ -27,7 +27,7 @@ const WorkSection = () => {
                     description='Description of the project goes here.'
                     year='2022'
                     imageUrl='https://placehold.co/960x460/png'
-                    />
+                    /> */}
             </Container>
         </section>
     )

@@ -50,7 +50,7 @@
   
   
   // SCSS loop to generate dynamic nth-child selectors with increasing delays
-  $max-elements: 10; // Adjust this number to the maximum number of elements you expect
+  $max-elements: 100; // Adjust this number to the maximum number of elements you expect
   $delay-step: 0.2s; // Delay step between each element
   
   @for $i from 1 through $max-elements {

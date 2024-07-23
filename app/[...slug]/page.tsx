@@ -24,6 +24,9 @@ const fetchData = (slug: string[]) => {
   const sbParams: ISbStoriesParams = {
     version: preview ? 'draft' : 'published',
     resolve_links: 'url',
+    resolve_relations: [
+      'FeaturedProjects.projects',
+    ],
   };
 
   // Fetch data from the Storyblok API

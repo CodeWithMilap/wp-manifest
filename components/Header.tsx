@@ -29,12 +29,12 @@ export const Header = ({ blok }: any) => {
 
   return (
     <>
-      <header className='border-b border-light dark:border-dark w-full fixed top-0 left-0 bg-white dark:bg-Grey-900 z-50'>
+      <header className='border-b border-light dark:border-dark w-full sticky top-0 left-0 bg-white dark:bg-Grey-900 z-50'>
         <nav
           className='flex items-center justify-between py-6 lg:py-6 px-6 lg:px-20'
           aria-label='Global'
         >
-          <div className='flex lg:flex-1 fadeinItem fadeinItem--fall'>
+          <div className='flex lg:flex-1 '>
             <Logo /> {/* Render the Logo component here */}
           </div>
           <div className='flex gap-6 items-center lg:hidden'>
@@ -42,7 +42,7 @@ export const Header = ({ blok }: any) => {
             <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
           </div>
           {/* Render the MenuButton component here */}
-          <div className='hidden lg:flex lg:gap-x-8 lg:items-center fadeinItem fadeinItem--fall'>
+          <div className='hidden lg:flex lg:gap-x-8 lg:items-center '>
             {blok?.header_menu?.map((nestedBlok: any) => (
               <StoryblokComponent
                 className=""

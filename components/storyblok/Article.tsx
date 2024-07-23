@@ -39,9 +39,11 @@ const Article: React.FC<ArticleProps> = ({ blok }) => {
             </h1>
           </div>
         </div>
-        {blok?.body?.map((nestedBlok: any) => (
-          <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
-        ))}
+        <div className='max-w-3xl mx-auto'>
+          {blok?.body?.map((nestedBlok: any) => (
+            <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+          ))}
+        </div>
       </div>
     </section>
   );

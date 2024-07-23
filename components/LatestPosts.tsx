@@ -33,7 +33,7 @@ const LatestPosts: React.FC<AllArticlesProps> = ({ blok }) => {
   const [data, setData] = useState<Article[]>([]);
 
   // Convert the string value to a number for items per page
-  const ITEMS_PER_PAGE = 4; // parseInt(blok.show_posts, 10);
+  const ITEMS_PER_PAGE = 3; // parseInt(blok.show_posts, 10);
 
   useEffect(() => {
     getData(ITEMS_PER_PAGE, page);
@@ -74,7 +74,7 @@ const LatestPosts: React.FC<AllArticlesProps> = ({ blok }) => {
   return (
     <section className='py-5 md:py-10'>
       <Container>
-        <div className='flex items-center justify-between py-5 md:py-10 fadeinItem fadeinItem--onView'>
+        <div className='flex items-center justify-between py-5 md:py-10'>
           <div>
             <Title className='text-2xl'>Latest Posts</Title>
           </div>
@@ -83,7 +83,7 @@ const LatestPosts: React.FC<AllArticlesProps> = ({ blok }) => {
           </div>
         </div>
 
-        <div className='grid gap-8 md:grid-cols-2 xl:grid-cols-4 fadeinItem--onView' {...storyblokEditable(blok)}>
+        <div className='grid gap-8 md:grid-cols-2 xl:grid-cols-3' {...storyblokEditable(blok)}>
           {data.map((article) => (
             <ArticleTeaser article={article} key={article.slug} />
           ))}

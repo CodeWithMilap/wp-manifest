@@ -20,11 +20,11 @@ const ArticleTeaser = ({ article }) => {
                         {/* <div>{category}</div>
                             <div>{date}</div> */}
                     </div>
-                    <Title className='text-lg'>
+                    <Title className='text-md leading-none'>
                         <Link href={`/blog/${article.slug}`}>{article.title}</Link>
                     </Title>
                 </div>
-                <p className='text-sm'>{article.teaser}</p>
+                <p className='text-sm line-clamp-4'>{article.teaser}</p>
             </div>
         </div>
     )
