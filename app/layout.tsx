@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { storyblokInit, apiPlugin, ISbStoriesParams, getStoryblokApi } from "@storyblok/react/rsc"
 import StoryblokProvider from "@/components/storyblok/StoryblokProvider"
 import { ThemeProvider } from 'next-themes';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const inter = Inter({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -47,9 +48,11 @@ export default async function RootLayout({
   return (
     <StoryblokProvider>
       <html lang='en'>
+        <GoogleAnalytics />
         <body
           className={`${inter.variable} flex min-h-screen flex-col font-inter font-normal dark:bg-background text-black dark:text-Grey-300`}
         >
+
           <ThemeProvider attribute="class">
             <Header blok={data?.story?.content} />
             {children}
