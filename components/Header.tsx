@@ -29,7 +29,7 @@ export const Header = ({ blok }: any) => {
 
   return (
     <>
-      <header className='border-b border-light dark:border-dark w-full sticky top-0 left-0 bg-white dark:bg-Grey-900 z-50'>
+      <header className='border-b border-light dark:border-dark w-full sticky top-0 left-0 bg-white dark:bg-background z-50'>
         <nav
           className='flex items-center justify-between py-6 lg:py-6 px-6 lg:px-20'
           aria-label='Global'
